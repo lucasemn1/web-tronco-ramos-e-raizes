@@ -1,4 +1,7 @@
+// Next
 import Link from "next/link";
+
+// Styles
 import style from "./style.module.scss";
 
 export default function Navbar() {

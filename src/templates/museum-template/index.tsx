@@ -1,5 +1,5 @@
+// Components
 import Navbar from "../../components/navbar";
-import style from "./style.module.scss";
 
 export default function MuseumTemplate({ children }) {
   return (

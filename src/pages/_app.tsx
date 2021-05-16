@@ -1,15 +1,17 @@
+// Next
 import { useRouter } from "next/router";
-import { useEffect } from "react";
+
+// Providers
 import AuthProvider from "../providers/auth-provider";
-import "../styles/globals.scss";
+
+// Template
 import MuseumTemplate from "../templates/museum-template";
+
+// Styles
+import "../styles/globals.scss";
 
 function MyApp({ Component, pageProps }) {
   const router = useRouter();
-
-  useEffect(() => {
-    console.log(router);
-  }, [router.asPath]);
 
   function switchTemplateToRender() {
     const { pathname } = router;
