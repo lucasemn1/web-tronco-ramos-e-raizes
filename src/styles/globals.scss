@@ -1,0 +1,60 @@
+:root {
+  --primary-color: #6f865e;
+  --primary-color-2: #5c704d;
+  --primary-color-3: #4f6341;
+  --background-color: #0a0a0a;
+  --background-color-2: #101010;
+  --background-contrast-color: #ffffff;
+  --background-contrast-color-2: #bdbdbd;
+  --border-color: #404040;
+}
+
+html,
+body {
+  width: 100vw;
+  max-width: 100vw;
+  min-height: 100vh;
+  padding: 0;
+  margin: 0;
+  background-color: var(--background-color);
+}
+
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+  font-family: "Raleway", sans-serif;
+  color: var(--background-contrast-color);
+}
+
+p {
+  font-family: "Montserrat", sans-serif;
+  font-size: 1rem;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+button {
+  font-size: 1rem;
+  font-weight: bold;
+  background-color: var(--primary-color);
+  border: none;
+  cursor: pointer;
+  border-radius: 0.4375rem;
+  box-shadow: 0px 6px 7px rgba(111, 134, 94, 0.1);
+
+  &:hover {
+    background-color: var(--primary-color-2);
+    transition: 0.1s;
+  }
+
+  &:active {
+    background-color: var(--primary-color-3);
+    transition: 0.1s;
+  }
+}
+
+@import "./layout.scss";
