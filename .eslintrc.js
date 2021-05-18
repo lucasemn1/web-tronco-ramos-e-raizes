@@ -37,12 +37,14 @@ module.exports = {
         'prettier/prettier': ['error', {}, { usePrettierrc: true }],
 
         '@typescript-eslint/explicit-function-return-type': [
-          1,
+          'off',
           {
             allowExpressions: true,
             allowConciseArrowFunctionExpressionsStartingWithVoid: true,
           },
         ],
+
+        '@typescript-eslint/explicit-module-boundary-types': ['off']
       },
     },
   ],
