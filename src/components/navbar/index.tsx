@@ -1,37 +1,47 @@
 // Next
 import Link from "next/link";
+import { useState } from "react";
 
 // Styles
 import style from "./style.module.scss";
 
 export default function Navbar() {
-  return (
-    <div className={`content ${style.navbar}`}>
-      <img
-        src="/assets/img/logo.png"
-        alt="Logo do Museu Tronco, Ramos e Raízes"
-      />
+  const [openMenu, setOpenMenu] = useState(false);
 
-      <ul>
-        <li>
-          <span className={style.active}>
-            <Link href="#">Início</Link>
-          </span>
-        </li>
-        <li>
-          <span>
-            <Link href="#">Exposições</Link>
-          </span>
-        </li>
-        <li>
-          <span>
-            <Link href="#">Documentos</Link>
-          </span>
-        </li>
-        <li>
-          <button type="button">Entrar</button>
-        </li>
-      </ul>
+  return (
+    <div className={style.navbar}>
+      <nav className="content">
+        <img src="/assets/img/logo.png" alt="Logo do Museu Tronco, Ramos e Raízes" />
+
+        <button type="button" onClick={() => setOpenMenu(!openMenu)}>
+          {openMenu ? (
+            <img src="/assets/icons/close.svg" alt="Abrir menu" />
+          ) : (
+            <img src="/assets/icons/menu.svg" alt="Fechar menu" />
+          )}
+        </button>
+
+        <ul className={openMenu ? "" : style.hiddenList}>
+          <li>
+            <span className={style.active}>
+              <Link href="#">Início</Link>
+            </span>
+          </li>
+          <li>
+            <span>
+              <Link href="#">Exposições</Link>
+            </span>
+          </li>
+          <li>
+            <span>
+              <Link href="#">Documentos</Link>
+            </span>
+          </li>
+          <li>
+            <button type="button">Entrar</button>
+          </li>
+        </ul>
+      </nav>
     </div>
   );
 }

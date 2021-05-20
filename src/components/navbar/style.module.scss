@@ -1,47 +1,99 @@
 .navbar {
-  height: 10.69rem;
-  display: flex;
-  justify-content: space-between;
+  padding: 1rem 1.25rem;
+  height: 5rem;
+  background-color: var(--background-color);
 
-  img {
-    width: 8.25rem;
-    height: 8.69rem;
-    margin-top: 1rem;
-  }
-
-  ul {
-    margin-top: 1.06rem;
-    height: 2.81rem;
-    list-style: none;
+  & > nav {
     display: flex;
-    align-items: center;
-    gap: 0.5625rem;
+    justify-content: space-between;
+    align-items: flex-start;
 
-    & > li > span > a {
-      padding-top: 0.375rem;
-      padding-bottom: 0.375rem;
-      padding-left: 0.3125rem;
-      padding-right: 0.3125rem;
+    & > img {
+      width: 8.25rem;
+      height: 8.69rem;
     }
 
-    & > li > .active > a {
-      padding-bottom: 0.25rem;
-      border-bottom: 0.125rem solid var(--background-contrast-color);
+    & > ul {
+      animation-name: fade-in;
+      animation-duration: 3s;
+      margin-top: 0.06rem;
+      list-style: none;
+      display: flex;
+      align-items: center;
+      gap: 0.5625rem;
+
+      & > li > span > a {
+        padding-top: 0.375rem;
+        padding-bottom: 0.375rem;
+        padding-left: 0.3125rem;
+        padding-right: 0.3125rem;
+      }
+
+      & > li > .active > a {
+        padding-bottom: 0.25rem;
+        border-bottom: 0.125rem solid var(--background-contrast-color);
+      }
+
+      & > li > span:hover > a {
+        transition: 0.1s;
+        background-color: var(--primary-color);
+        border-radius: 0.25rem;
+      }
+
+      & > li > .active:hover > a {
+        border-radius: 0.25rem 0.25rem 0 0;
+      }
+
+      & > li > button {
+        height: 2.81rem;
+        width: 6.75rem;
+      }
     }
 
-    & > li > span:hover > a {
-      transition: 0.1s;
-      background-color: var(--primary-color);
-      border-radius: 0.25rem;
-    }
-
-    & > li > .active:hover > a {
-      border-radius: 0.25rem 0.25rem 0 0;
-    }
-
-    & > li > button {
+    & > button {
+      width: 2.81rem;
       height: 2.81rem;
-      width: 6.75rem;
+      font-size: 0;
+      background-color: transparent;
+      box-shadow: none;
+    }
+  }
+}
+
+@media (min-width: 768px) {
+  .navbar > nav > button {
+    display: none;
+  }
+}
+
+@media (max-width: 768px) {
+  .navbar {
+    position: relative;
+    width: 100%;
+
+    & > nav {
+      & > img {
+        width: 2.81rem;
+        height: 2.81rem;
+      }
+
+      & > ul {
+        top: 5rem;
+        left: 0;
+        width: 100%;
+        height: calc(100vh - 5rem);
+        padding: 1.5rem;
+        background: var(--background-color-2);
+        position: absolute;
+        align-items: flex-start;
+        flex-direction: column;
+        gap: 2rem;
+        margin: 0;
+      }
+
+      .hiddenList {
+        display: none;
+      }
     }
   }
 }

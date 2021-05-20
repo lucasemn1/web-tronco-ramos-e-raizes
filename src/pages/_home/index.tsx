@@ -2,7 +2,7 @@
 import Head from "next/head";
 import { GetStaticProps } from "next";
 
-export default function Home() {
+export default function Home(): JSX.Element {
   return (
     <div>
       <Head>
