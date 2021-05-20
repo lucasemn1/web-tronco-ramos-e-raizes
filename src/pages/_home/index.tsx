@@ -1,6 +1,7 @@
 // Next
 import Head from "next/head";
 import { GetStaticProps } from "next";
+import InputField from "../../components/input-field";
 
 export default function Home(): JSX.Element {
   return (
@@ -10,6 +11,8 @@ export default function Home(): JSX.Element {
       </Head>
 
       <h1>Página home</h1>
+
+      <InputField type="text" placeholder="Email" required />
     </div>
   );
 }
