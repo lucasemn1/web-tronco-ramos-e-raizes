@@ -12,7 +12,7 @@ Cultura, história, conhecimento!
   Esse projeto é o front-end do novo sistema do Museu Tronco, Ramos e Raízes que tem como principal propósito a valorização e a divulgação da cultura indígena e quilombola do RN.
 </p>
 
-## Acompanhe o protótipo e até colabore, se puder
+## Acompanhe o protótipo e colabore com o projeto, se puder 😁
 
 [![Figma](https://img.shields.io/static/v1?label=Figma&message=Prot%C3%B3tipo&color=F24E1E&style=for-the-badge&logo=figma)](https://www.figma.com/file/VAB4wAgGz0BG9mN4HzE7vZ/Museu-Tronco-Ramos-e-Ra%C3%ADzes?node-id=0%3A1)
 
@@ -30,18 +30,18 @@ Cultura, história, conhecimento!
 - [![Next.js](https://img.shields.io/static/v1?label=Next.js&message=10.2.0&color=000000&style=for-the-badge&logo=next-dot-js)](https://nextjs.org/)
 - [![SASS](https://img.shields.io/static/v1?label=Sass&message=1.32.13&color=CC6699&style=for-the-badge&logo=sass)](https://sass-lang.com/)
 
-
 ## Instalação
 
 1. Após clonar o projeto na máquina, navegue até a pasta "web-tronco-ramos-e-raizes" e execute o comando abaixo para instalar as dependências:
+
 ```console
 yarn
 ```
 
 2. Após as dependências terem sido instaladas, execute o servidor local:
+
 ```console
 yarn dev
 ```
 
 3. Só isso! O projeto já está rodando na sua máquina! 🎉
-
