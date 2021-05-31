@@ -7,6 +7,7 @@ import style from "./style.module.scss";
 
 export default function Navbar() {
   const [openMenu, setOpenMenu] = useState(false);
+  const [openDropdown, setOpenDropdown] = useState(false);
 
   return (
     <div className={style.navbar}>
@@ -33,9 +34,22 @@ export default function Navbar() {
             </span>
           </li>
           <li>
-            <span>
-              <Link href="#">Documentos</Link>
+            <span
+              onClick={() => setOpenDropdown(!openDropdown)}
+              onKeyUp={() => setOpenDropdown(!openDropdown)}
+              role="menu"
+              tabIndex={0}
+            >
+              <Link href="#">Mídias</Link>
             </span>
+            {openDropdown && (
+              <ul className={style.dropdown}>
+                <li>Documentos</li>
+                <li>Artigos</li>
+                <li>Livros</li>
+                <li>Produções</li>
+              </ul>
+            )}
           </li>
           <li>
             <button type="button">Entrar</button>
