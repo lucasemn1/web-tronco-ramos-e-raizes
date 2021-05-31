@@ -1,8 +1,7 @@
 # Museu Tronco, Ramos e Raízes.
 
-  <a href="https://unform.dev">
-    <img src="https://github.com/lucasemn1/web-tronco-ramos-e-raizes/blob/main/public/assets/img/green_logo.png?raw=true" height="150" width="175" alt="Unform" />
-  </a>
+<img src="https://github.com/lucasemn1/web-tronco-ramos-e-raizes/blob/main/public/assets/img/green_logo.png?raw=true" height="150" width="175" alt="Unform" />
+
 
 Cultura, história, conhecimento!
 
