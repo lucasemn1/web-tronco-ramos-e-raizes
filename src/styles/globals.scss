@@ -19,6 +19,10 @@ body {
   background-color: var(--background-color);
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 * {
   box-sizing: border-box;
   padding: 0;

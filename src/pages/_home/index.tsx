@@ -1,7 +1,9 @@
 // Next
 import Head from "next/head";
 import { GetStaticProps } from "next";
-import InputField from "../../components/input-field";
+
+// Components
+import Carousel from "../../components/carousel";
 
 export default function Home(): JSX.Element {
   return (
@@ -10,9 +12,7 @@ export default function Home(): JSX.Element {
         <title>Museu Tronco, Ramos e Raízes | Início</title>
       </Head>
 
-      <h1>Página home</h1>
-
-      <InputField type="text" placeholder="Email" required />
+      <Carousel />
     </div>
   );
 }

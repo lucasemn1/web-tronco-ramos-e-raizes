@@ -1,7 +1,11 @@
 .navbar {
   padding: 1rem 0;
   height: 5rem;
+  width: 100%;
   background-color: var(--background-color);
+  position: absolute;
+  top: 0;
+  z-index: 5;
 
   & > nav {
     display: flex;
