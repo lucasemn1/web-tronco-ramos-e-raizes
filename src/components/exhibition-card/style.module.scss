@@ -1,23 +1,25 @@
 .card {
   width: 23.9375rem;
-  height: 30rem;
+  height: 31.5625rem;
   position: relative;
-  background-color: var(--primary-color);
-  border-radius: 1rem;
-  margin-top: 2.5rem;
+
+  & > .information,
+  & > .dateAndView {
+    position: absolute;
+    width: 23.3125rem;
+    height: 29.18rem;
+    border-radius: 1rem;
+  }
 
   & > .information {
-    position: absolute;
-    top: -2rem;
-    right: 1.5625rem;
+    top: 0;
+    left: 0;
     display: flex;
     flex-direction: column;
     justify-content: flex-end;
-    background-image: url("https://i.pinimg.com/originals/ca/4b/91/ca4b9102f39d3b1cfa1756f93ad175c7.jpg");
-    height: 29.1875rem;
-    width: 23rem;
     border-radius: 1rem;
     padding: 2.0625rem 2.25rem;
+    z-index: 2;
 
     & > .title {
       color: #fff;
@@ -36,8 +38,11 @@
     display: flex;
     align-items: flex-end;
     justify-content: space-between;
-    height: 100%;
-    padding: 1rem 2.25rem;
+    background-color: var(--primary-color);
+    padding: 0.7rem 2.3rem;
+    bottom: 0;
+    right: 0;
+    z-index: 1;
 
     & > p {
       font-size: 0.875rem;

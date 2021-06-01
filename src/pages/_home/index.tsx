@@ -18,20 +18,15 @@ export default function Home(): JSX.Element {
 
       <main>
         <section className={styles.recentExhibitions}>
-          <h2>EXPOSIÇÕES MAIS RECENTES</h2>
+          <div className="content">
+            <h2>EXPOSIÇÕES MAIS RECENTES</h2>
+          </div>
           <div className={styles.exhibitionArea}>
-            <div className={styles.exhibitionContainer}>
-              <ExhibitionCard />
-            </div>
-            <div className={styles.exhibitionContainer}>
-              <ExhibitionCard />
-            </div>
-            <div className={styles.exhibitionContainer}>
-              <ExhibitionCard />
-            </div>
-            <div className={styles.exhibitionContainer}>
-              <ExhibitionCard />
-            </div>
+            <ExhibitionCard />
+            <ExhibitionCard />
+            <ExhibitionCard />
+            <ExhibitionCard />
+            <ExhibitionCard />
           </div>
         </section>
       </main>

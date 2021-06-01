@@ -1,16 +1,22 @@
 .recentExhibitions {
-  & > h2 {
-    margin-bottom: 3.625rem;
-  }
+  margin-top: 7.1875rem;
+  margin-bottom: 7.1875rem;
 }
 
 .exhibitionArea {
   display: flex;
-  gap: 3.6875rem;
-  padding: 0 1rem;
+  gap: 2rem;
   overflow-x: scroll;
+  max-width: 100%;
+  padding: 0 7.1875rem;
 }
 
 .exhibitionArea::-webkit-scrollbar {
-  display: none;
+  background-color: blue;
+}
+
+@media (max-width: 768px) {
+  .exhibitionArea {
+    padding: 0 6.5%;
+  }
 }
