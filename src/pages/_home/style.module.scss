@@ -1,0 +1,16 @@
+.recentExhibitions {
+  & > h2 {
+    margin-bottom: 3.625rem;
+  }
+}
+
+.exhibitionArea {
+  display: flex;
+  gap: 3.6875rem;
+  padding: 0 1rem;
+  overflow-x: scroll;
+}
+
+.exhibitionArea::-webkit-scrollbar {
+  display: none;
+}
