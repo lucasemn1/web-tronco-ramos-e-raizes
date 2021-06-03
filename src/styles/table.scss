@@ -1,0 +1,27 @@
+table {
+  width: 48.125rem;
+  border-collapse: collapse;
+}
+
+thead th {
+  font-weight: 700;
+  text-align: left;
+  line-height: 2rem;
+
+  &:first-child {
+    padding-left: 1rem;
+  }
+}
+
+tbody > tr {
+  height: 2.625rem;
+  cursor: pointer;
+
+  & :first-child {
+    padding-left: 1rem;
+  }
+
+  & > td {
+    border-top: 1px solid #404040;
+  }
+}

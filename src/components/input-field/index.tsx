@@ -1,6 +1,6 @@
 import React, { InputHTMLAttributes } from "react";
 
-import styles from "./input-field.module.scss";
+import styles from "./style.module.scss";
 
 interface InputFieldProps {
   pathToIcon: string;
