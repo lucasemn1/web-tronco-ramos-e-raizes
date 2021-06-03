@@ -1,11 +1,16 @@
 // Next
 import Head from "next/head";
+import dynamic from "next/dynamic";
 import { GetStaticProps } from "next";
+
+const Map = dynamic(
+  () => import("../../components/map"), // replace '@components/map' with your component's location
+  { ssr: false }
+);
 
 // Components
 import Carousel from "../../components/carousel";
 import ExhibitionCard from "../../components/exhibition-card";
-
 import styles from "./style.module.scss";
 
 export default function Home(): JSX.Element {
@@ -28,6 +33,22 @@ export default function Home(): JSX.Element {
             <ExhibitionCard />
             <ExhibitionCard />
           </div>
+        </section>
+
+        <section className={`content ${styles.logoArea}`}>
+          <img src="/assets/img/expanded_logo.png" alt="Logo do museu" />
+        </section>
+
+        <section>
+          <div className="content">
+            <h2>Mapa de exposições</h2>
+          </div>
+
+          <Map />
+        </section>
+
+        <section className={`content ${styles.galery}`}>
+          <h2>Galeria</h2>
         </section>
       </main>
     </div>

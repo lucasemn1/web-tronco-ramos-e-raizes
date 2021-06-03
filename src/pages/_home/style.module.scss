@@ -1,4 +1,6 @@
-.recentExhibitions {
+.recentExhibitions,
+.logoArea,
+.galery {
   margin-top: 7.1875rem;
   margin-bottom: 7.1875rem;
 }
@@ -12,7 +14,19 @@
 }
 
 .exhibitionArea::-webkit-scrollbar {
-  background-color: blue;
+  display: none;
+}
+
+.logoArea {
+  display: flex;
+  justify-content: center;
+
+  & > img {
+    width: 80%;
+    max-width: 29.75rem;
+    width: 80%;
+    height: auto;
+  }
 }
 
 @media (max-width: 768px) {

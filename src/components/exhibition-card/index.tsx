@@ -17,7 +17,7 @@ export default function ExhibitionCard() {
           </p>
         </div>
         <div className={styles.dateAndView}>
-          <p>04 de mai. de 2021</p>
+          <b>04 de mai. de 2021</b>
           <p>
             <img src="/assets/icons/views.svg" alt="Quantidade de visualizações" />
             180

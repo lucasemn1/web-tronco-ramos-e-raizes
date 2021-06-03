@@ -47,6 +47,8 @@
     & > p {
       font-size: 0.875rem;
       font-weight: 400;
+      display: flex;
+      align-items: center;
     }
 
     & > p > img {
