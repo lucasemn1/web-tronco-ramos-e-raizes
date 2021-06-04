@@ -47,8 +47,59 @@ export default function Home(): JSX.Element {
           <Map />
         </section>
 
-        <section className={`content ${styles.galery}`}>
+        <section className={`content ${styles.galeryArea}`}>
           <h2>Galeria</h2>
+
+          <div className={styles.galeryGrid}>
+            <div className={`${styles.imageWrapper} ${styles.firstImageWrapper}`}>
+              <img
+                src="https://media.gettyimages.com/photos/indigenous-brazilian-child-portrait-from-tupi-guarani-ethnicity-picture-id1018492986?s=612x612"
+                alt=""
+              />
+            </div>
+
+            <div className={styles.imageWrapper}>
+              <img
+                src="https://media.gettyimages.com/photos/indigenous-brazilian-child-portrait-from-tupi-guarani-ethnicity-picture-id1018492986?s=612x612"
+                alt=""
+              />
+            </div>
+
+            <div className={styles.imageWrapper}>
+              <img
+                src="https://media.gettyimages.com/photos/indigenous-brazilian-child-portrait-from-tupi-guarani-ethnicity-picture-id1018492986?s=612x612"
+                alt=""
+              />
+            </div>
+
+            <div className={`${styles.imageWrapper} ${styles.fourthImageWrapper}`}>
+              <img
+                src="https://media.gettyimages.com/photos/indigenous-brazilian-child-portrait-from-tupi-guarani-ethnicity-picture-id1018492986?s=612x612"
+                alt=""
+              />
+            </div>
+
+            <div className={styles.imageWrapper}>
+              <img
+                src="https://media.gettyimages.com/photos/indigenous-brazilian-child-portrait-from-tupi-guarani-ethnicity-picture-id1018492986?s=612x612"
+                alt=""
+              />
+            </div>
+
+            <div className={styles.imageWrapper}>
+              <img
+                src="https://media.gettyimages.com/photos/indigenous-brazilian-child-portrait-from-tupi-guarani-ethnicity-picture-id1018492986?s=612x612"
+                alt=""
+              />
+            </div>
+
+            <div className={styles.imageWrapper}>
+              <img
+                src="https://media.gettyimages.com/photos/indigenous-brazilian-child-portrait-from-tupi-guarani-ethnicity-picture-id1018492986?s=612x612"
+                alt=""
+              />
+            </div>
+          </div>
         </section>
       </main>
     </div>
