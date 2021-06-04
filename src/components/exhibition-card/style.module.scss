@@ -20,6 +20,11 @@
     border-radius: 1rem;
     padding: 2.0625rem 2.25rem;
     z-index: 2;
+    background-size: auto 110%;
+
+    & :hover {
+      background-size: auto 105%;
+    }
 
     & > .title {
       color: #fff;

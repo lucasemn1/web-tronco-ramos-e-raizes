@@ -44,9 +44,13 @@ export default function Navbar() {
             </span>
             {openDropdown && (
               <ul className={style.dropdown}>
-                <li>Documentos</li>
-                <li>Artigos</li>
-                <li>Livros</li>
+                <li>
+                  <Link href="/documents">Documentos</Link>
+                </li>
+                <li>
+                  <Link href="/articles">Artigos</Link>
+                </li>
+                <Link href="/books">Livros</Link>
                 <li>Produções</li>
               </ul>
             )}
