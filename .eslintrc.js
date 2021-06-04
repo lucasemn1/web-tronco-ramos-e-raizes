@@ -32,6 +32,8 @@ module.exports = {
 
         'jsx-a11y/anchor-is-valid': 'off',
 
+        'jsx-a11y/no-noninteractive-element-interactions': 'off',
+
         '@typescript-eslint/no-unused-vars': ['error'],
 
         'prettier/prettier': ['error', {}, { usePrettierrc: true }],

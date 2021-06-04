@@ -1,0 +1,19 @@
+ul.listPagesIndex {
+  list-style: none;
+  display: flex;
+  gap: 1.3125rem;
+
+  & li {
+    width: 2.4375rem;
+    height: 2.3125rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 0.4375rem;
+    cursor: pointer;
+  }
+
+  & > .selectedPage {
+    background-color: var(--primary-color);
+  }
+}

@@ -81,6 +81,10 @@
   flex-direction: column;
   gap: 0.8rem;
   z-index: 6;
+
+  & > li {
+    cursor: pointer;
+  }
 }
 
 @media (min-width: 768px) {
@@ -92,7 +96,7 @@
 @media (max-width: 768px) {
   .navbar {
     position: relative;
-    width: 100%;
+    width: 100vw;
 
     & > nav {
       & > img {
