@@ -21,20 +21,18 @@ export default function Carousel() {
   const [currentSlide, setCurrentSlide] = useState<ISlide>(slides[currentSlideIndex]);
 
   useEffect(() => {
+    const currentInterval = setInterval(() => {
+      if (currentSlideIndex === slides.length - 1) {
+        setCurrentSlideIndex(0);
+      } else {
+        setCurrentSlideIndex(currentSlideIndex + 1);
+      }
+    }, 10000);
+
     setCurrentSlide(slides[currentSlideIndex]);
+
+    return () => clearInterval(currentInterval);
   }, [currentSlideIndex]);
-
-  setInterval(() => {
-    nextSlide();
-  }, 10000);
-
-  function nextSlide() {
-    if (currentSlideIndex === slides.length - 1) {
-      setCurrentSlideIndex(0);
-    } else {
-      setCurrentSlideIndex(currentSlideIndex + 1);
-    }
-  }
 
   function renderButtons() {
     return slides.map((slide, index) => (
@@ -42,7 +40,7 @@ export default function Carousel() {
         key={index}
         className={currentSlideIndex === index ? style.active : ""}
         onClick={() => setCurrentSlideIndex(index)}
-      ></button>
+      />
     ));
   }
 
