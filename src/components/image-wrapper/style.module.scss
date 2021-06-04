@@ -1,0 +1,36 @@
+.imageWrapper {
+  width: 100%;
+  border-radius: 1.75rem;
+  border: 1px solid var(--background-contrast-color-2);
+  overflow: hidden;
+  background-size: auto 110%;
+  background-position-y: center;
+  background-position-x: center;
+  transition: 0.1s;
+  cursor: pointer;
+
+  &:hover {
+    background-size: auto 105%;
+    transition: 0.1s;
+  }
+
+  .wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 32.9375rem;
+    backdrop-filter: blur(2px) brightness(0.5);
+
+    & > img {
+      width: 115%;
+      object-fit: cover;
+      transition: 0.2s;
+    }
+
+    &:hover > img {
+      transition: 0.2s;
+      width: 100%;
+    }
+  }
+}

@@ -12,6 +12,7 @@ const Map = dynamic(
 import Carousel from "../../components/carousel";
 import ExhibitionCard from "../../components/exhibition-card";
 import styles from "./style.module.scss";
+import ImageWrapper from "../../components/image-wrapper";
 
 export default function Home(): JSX.Element {
   return (
@@ -51,54 +52,42 @@ export default function Home(): JSX.Element {
           <h2>Galeria</h2>
 
           <div className={styles.galeryGrid}>
-            <div className={`${styles.imageWrapper} ${styles.firstImageWrapper}`}>
-              <img
-                src="https://media.gettyimages.com/photos/indigenous-brazilian-child-portrait-from-tupi-guarani-ethnicity-picture-id1018492986?s=612x612"
-                alt=""
-              />
-            </div>
+            <ImageWrapper
+              className={styles.firstImageWrapper}
+              alt="Teste"
+              imageUrl="https://media.gettyimages.com/photos/indigenous-brazilian-child-portrait-from-tupi-guarani-ethnicity-picture-id1018492986?s=612x612"
+            />
 
-            <div className={styles.imageWrapper}>
-              <img
-                src="https://media.gettyimages.com/photos/indigenous-brazilian-child-portrait-from-tupi-guarani-ethnicity-picture-id1018492986?s=612x612"
-                alt=""
-              />
-            </div>
+            <ImageWrapper
+              alt="Teste"
+              imageUrl="https://media.gettyimages.com/photos/indigenous-brazilian-child-portrait-from-tupi-guarani-ethnicity-picture-id1018492986?s=612x612"
+            />
 
-            <div className={styles.imageWrapper}>
-              <img
-                src="https://media.gettyimages.com/photos/indigenous-brazilian-child-portrait-from-tupi-guarani-ethnicity-picture-id1018492986?s=612x612"
-                alt=""
-              />
-            </div>
+            <ImageWrapper
+              alt="Teste"
+              imageUrl="https://media.gettyimages.com/photos/indigenous-brazilian-child-portrait-from-tupi-guarani-ethnicity-picture-id1018492986?s=612x612"
+            />
 
-            <div className={`${styles.imageWrapper} ${styles.fourthImageWrapper}`}>
-              <img
-                src="https://media.gettyimages.com/photos/indigenous-brazilian-child-portrait-from-tupi-guarani-ethnicity-picture-id1018492986?s=612x612"
-                alt=""
-              />
-            </div>
+            <ImageWrapper
+              className={styles.fourthImageWrapper}
+              alt="Teste"
+              imageUrl="https://media.gettyimages.com/photos/indigenous-brazilian-child-portrait-from-tupi-guarani-ethnicity-picture-id1018492986?s=612x612"
+            />
 
-            <div className={styles.imageWrapper}>
-              <img
-                src="https://media.gettyimages.com/photos/indigenous-brazilian-child-portrait-from-tupi-guarani-ethnicity-picture-id1018492986?s=612x612"
-                alt=""
-              />
-            </div>
+            <ImageWrapper
+              alt="Teste"
+              imageUrl="https://media.gettyimages.com/photos/indigenous-brazilian-child-portrait-from-tupi-guarani-ethnicity-picture-id1018492986?s=612x612"
+            />
 
-            <div className={styles.imageWrapper}>
-              <img
-                src="https://media.gettyimages.com/photos/indigenous-brazilian-child-portrait-from-tupi-guarani-ethnicity-picture-id1018492986?s=612x612"
-                alt=""
-              />
-            </div>
+            <ImageWrapper
+              alt="Teste"
+              imageUrl="https://media.gettyimages.com/photos/indigenous-brazilian-child-portrait-from-tupi-guarani-ethnicity-picture-id1018492986?s=612x612"
+            />
 
-            <div className={styles.imageWrapper}>
-              <img
-                src="https://media.gettyimages.com/photos/indigenous-brazilian-child-portrait-from-tupi-guarani-ethnicity-picture-id1018492986?s=612x612"
-                alt=""
-              />
-            </div>
+            <ImageWrapper
+              alt="Teste"
+              imageUrl="https://media.gettyimages.com/photos/indigenous-brazilian-child-portrait-from-tupi-guarani-ethnicity-picture-id1018492986?s=612x612"
+            />
           </div>
         </section>
       </main>
