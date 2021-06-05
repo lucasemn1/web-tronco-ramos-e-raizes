@@ -62,6 +62,40 @@ export default function Documents() {
                 <td>2 MB</td>
                 <td>22 de abril de 2021</td>
               </tr>
+              <tr>
+                <td>What is Lorem Ipsum?</td>
+                <td>PDF</td>
+                <td>2 MB</td>
+                <td>22 de abril de 2021</td>
+              </tr>
+
+              <tr>
+                <td>What is Lorem Ipsum?</td>
+                <td>PDF</td>
+                <td>2 MB</td>
+                <td>22 de abril de 2021</td>
+              </tr>
+
+              <tr>
+                <td>What is Lorem Ipsum?</td>
+                <td>PDF</td>
+                <td>2 MB</td>
+                <td>22 de abril de 2021</td>
+              </tr>
+
+              <tr>
+                <td>What is Lorem Ipsum?</td>
+                <td>PDF</td>
+                <td>2 MB</td>
+                <td>22 de abril de 2021</td>
+              </tr>
+
+              <tr>
+                <td>What is Lorem Ipsum?</td>
+                <td>PDF</td>
+                <td>2 MB</td>
+                <td>22 de abril de 2021</td>
+              </tr>
             </tbody>
           </table>
         </div>

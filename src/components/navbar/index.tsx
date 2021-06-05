@@ -12,7 +12,9 @@ export default function Navbar() {
   return (
     <div className={style.navbar}>
       <nav className="content">
-        <img src="/assets/img/logo.png" alt="Logo do Museu Tronco, Ramos e Raízes" />
+        <Link href="/">
+          <img src="/assets/img/logo.png" alt="Logo do Museu Tronco, Ramos e Raízes" />
+        </Link>
 
         <button type="button" onClick={() => setOpenMenu(!openMenu)}>
           {openMenu ? (

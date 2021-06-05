@@ -28,11 +28,11 @@ export default function Home(): JSX.Element {
             <h2>EXPOSIÇÕES MAIS RECENTES</h2>
           </div>
           <div className={styles.exhibitionArea}>
-            <ExhibitionCard pathToExhibition="/exhibitions" />
-            <ExhibitionCard pathToExhibition="/exhibitions" />
-            <ExhibitionCard pathToExhibition="/exhibitions" />
-            <ExhibitionCard pathToExhibition="/exhibitions" />
-            <ExhibitionCard pathToExhibition="/exhibitions" />
+            <ExhibitionCard pathToExhibition="/exhibition" />
+            <ExhibitionCard pathToExhibition="/exhibition" />
+            <ExhibitionCard pathToExhibition="/exhibition" />
+            <ExhibitionCard pathToExhibition="/exhibition" />
+            <ExhibitionCard pathToExhibition="/exhibition" />
           </div>
         </section>
 
@@ -55,23 +55,23 @@ export default function Home(): JSX.Element {
             <ImageWrapper
               className={styles.firstImageWrapper}
               alt="Teste"
-              imageUrl="https://media.gettyimages.com/photos/indigenous-brazilian-child-portrait-from-tupi-guarani-ethnicity-picture-id1018492986?s=612x612"
+              imageUrl="https://lh3.googleusercontent.com/proxy/_StkkYasiEmrJu39iBOnzjC5xhjzdAQ78TbOid8yvMD9ND_j8C8dMwe0mZRh2vgoD1-4iTEVUZazkkJv8WbnRTmpuSZQ15X_PX94GS_spemhGC4Lqfvnq49eQ_nqQo1iPG28vsXagQes1dKwGgTBO_cKmGgDVzFLyU85ji02ZDo46leaYYSJ96DoIT1F3uEnrg"
             />
 
             <ImageWrapper
               alt="Teste"
-              imageUrl="https://media.gettyimages.com/photos/indigenous-brazilian-child-portrait-from-tupi-guarani-ethnicity-picture-id1018492986?s=612x612"
+              imageUrl="https://www.cultura.sp.gov.br/wp-content/uploads/2018/04/Capturar.png"
             />
 
             <ImageWrapper
               alt="Teste"
-              imageUrl="https://media.gettyimages.com/photos/indigenous-brazilian-child-portrait-from-tupi-guarani-ethnicity-picture-id1018492986?s=612x612"
+              imageUrl="https://s2.glbimg.com/19Tl8ZnLUCgL-4krvT3m52Y-tjc=/0x0:3597x2394/984x0/smart/filters:strip_icc()/i.s3.glbimg.com/v1/AUTH_e84042ef78cb4708aeebdf1c68c6cbd6/internal_photos/bs/2019/A/B/CKLlfjSXAxhsKv6uEzSA/img-7082.jpg"
             />
 
             <ImageWrapper
               className={styles.fourthImageWrapper}
               alt="Teste"
-              imageUrl="https://media.gettyimages.com/photos/indigenous-brazilian-child-portrait-from-tupi-guarani-ethnicity-picture-id1018492986?s=612x612"
+              imageUrl="https://lh3.googleusercontent.com/proxy/CgLFHgkz9jxpj8rDD5otgNgQjas5pQwdlACuHJPDlOkMekamP13tlEUU7qGxcJfvnKbrP0LEtgGMT0U0QBhts0VK8n0w68p1wMAq5relue7-_2lPP5WyxFzXU5BrlYr3TCFs9J0riGoJV7HF6gL2YlL9M76Vuq14RUG12NfYZhagO-FO0cI42RmBJ_FQvw"
             />
 
             <ImageWrapper
@@ -81,12 +81,12 @@ export default function Home(): JSX.Element {
 
             <ImageWrapper
               alt="Teste"
-              imageUrl="https://media.gettyimages.com/photos/indigenous-brazilian-child-portrait-from-tupi-guarani-ethnicity-picture-id1018492986?s=612x612"
+              imageUrl="https://lh3.googleusercontent.com/proxy/9yI_fRuWFCmgsMxx7SIzTZEkPgSbVfsBz7wxL8mU4msZUKUb5lSXHEfig2INJZOrYGwL2nOglwfbTiC0Sf3l7Q-uYgfA8tqoBgMrqzK8c-ETmipzITLvlXAc51pMVgT_XQ"
             />
 
             <ImageWrapper
               alt="Teste"
-              imageUrl="https://media.gettyimages.com/photos/indigenous-brazilian-child-portrait-from-tupi-guarani-ethnicity-picture-id1018492986?s=612x612"
+              imageUrl="https://agenciadenoticias.ibge.gov.br/images/agenciadenoticias/ibge/2018_12/povos-tradicionais_home2.jpg"
             />
           </div>
         </section>

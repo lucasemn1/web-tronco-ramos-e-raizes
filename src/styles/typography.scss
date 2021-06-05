@@ -8,6 +8,11 @@ h6 {
   text-shadow: 4px 3px 0px #6f865e;
 }
 
+h1.title {
+  font-size: 4rem;
+  margin-bottom: 2.5rem;
+}
+
 h2 {
   font-size: 1.88rem;
   margin-bottom: 2.5rem;
@@ -16,5 +21,9 @@ h2 {
 @media (max-width: 768px) {
   h1 {
     font-size: 1.5rem;
+  }
+
+  h1.title {
+    font-size: 2.5rem;
   }
 }
