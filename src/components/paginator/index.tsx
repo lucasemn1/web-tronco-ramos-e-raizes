@@ -3,7 +3,11 @@ import { useState } from "react";
 // Styles
 import styles from "./style.module.scss";
 
-export default function Paginator(props) {
+interface IPaginatorProps {
+  className: string;
+}
+
+export default function Paginator(props: IPaginatorProps) {
   const [pageNumber] = useState([1, 2, 3, 4, 5]);
   const [selectedPage, setSelectedPage] = useState(1);
 

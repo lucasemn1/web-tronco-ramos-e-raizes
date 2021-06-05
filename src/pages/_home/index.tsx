@@ -28,11 +28,11 @@ export default function Home(): JSX.Element {
             <h2>EXPOSIÇÕES MAIS RECENTES</h2>
           </div>
           <div className={styles.exhibitionArea}>
-            <ExhibitionCard />
-            <ExhibitionCard />
-            <ExhibitionCard />
-            <ExhibitionCard />
-            <ExhibitionCard />
+            <ExhibitionCard pathToExhibition="/exhibitions" />
+            <ExhibitionCard pathToExhibition="/exhibitions" />
+            <ExhibitionCard pathToExhibition="/exhibitions" />
+            <ExhibitionCard pathToExhibition="/exhibitions" />
+            <ExhibitionCard pathToExhibition="/exhibitions" />
           </div>
         </section>
 

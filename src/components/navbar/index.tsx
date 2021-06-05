@@ -25,12 +25,12 @@ export default function Navbar() {
         <ul className={openMenu ? "" : style.hiddenList}>
           <li>
             <span className={style.active}>
-              <Link href="#">Início</Link>
+              <Link href="/">Início</Link>
             </span>
           </li>
           <li>
             <span>
-              <Link href="#">Exposições</Link>
+              <Link href="/exhibitions">Exposições</Link>
             </span>
           </li>
           <li>

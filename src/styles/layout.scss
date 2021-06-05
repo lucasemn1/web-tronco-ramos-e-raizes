@@ -7,3 +7,31 @@
   margin: 0 21%;
   max-width: 48.125rem;
 }
+
+// Global style to Documents, Articles and Books list pages:
+.content-area {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+h1.title {
+  font-size: 4rem;
+  margin-bottom: 2.5rem;
+}
+
+.table-container {
+  width: 100%;
+  overflow-x: auto;
+  margin-top: 5.5625rem;
+}
+
+.paginator {
+  margin: 4.125rem 0;
+}
+
+@media (max-width: 768px) {
+  .table-container {
+    width: 90vw;
+  }
+}

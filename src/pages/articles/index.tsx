@@ -5,7 +5,6 @@ import InputField from "../../components/input-field";
 import Paginator from "../../components/paginator";
 
 // Styles:
-import styles from "./style.module.scss";
 
 export default function Documents() {
   return (
@@ -14,12 +13,12 @@ export default function Documents() {
         <title>Museu Tronco, Ramos e Raízes | Artigos</title>
       </Head>
 
-      <section className={`small-content ${styles.articlesArea}`}>
-        <h1 className={styles.title}>Artigos</h1>
+      <section className="small-content content-area">
+        <h1 className="title">Artigos</h1>
 
         <InputField placeholder="Buscar" type="text" />
 
-        <div className={styles.tableContainer}>
+        <div className="table-container">
           <table>
             <thead>
               <tr>
@@ -69,7 +68,7 @@ export default function Documents() {
           </table>
         </div>
 
-        <Paginator className={styles.paginator} />
+        <Paginator className="paginator" />
       </section>
     </div>
   );
