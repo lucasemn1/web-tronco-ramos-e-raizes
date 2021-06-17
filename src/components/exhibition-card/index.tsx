@@ -1,8 +1,10 @@
+import { HTMLAttributes, Attributes } from "react";
+
 import Link from "next/link";
 
 import styles from "./style.module.scss";
 
-interface IExhibitionCardProps {
+interface IExhibitionCardProps extends HTMLAttributes<Attributes> {
   pathToExhibition: string;
 }
 
