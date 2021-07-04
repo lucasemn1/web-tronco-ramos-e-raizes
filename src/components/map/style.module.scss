@@ -21,13 +21,16 @@
     justify-content: center;
     gap: 0.6875rem;
 
-    & > button {
+    & > button, & > a {
       border: 1px solid var(--border-color);
       background-color: transparent;
+      border-radius: 0.4375rem;
       color: var(--border-color);
       width: 3.875rem;
       height: 2.125rem;
-      font-size: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
 
       &:last-child {
         background-color: var(--border-color);

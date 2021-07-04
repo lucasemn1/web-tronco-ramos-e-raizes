@@ -29,9 +29,13 @@ export default function Map(props: Props) {
           <h1>{marker.title}</h1>
 
           <div className={styles.buttonsArea}>
-            <button>
+            <a
+              href={`https://www.google.com/maps/@${marker.lat},${marker.long},14z`}
+              target="_blank"
+              rel="noopener noreferrer"
+            >
               <img src="/assets/icons/map.svg" alt="Abrir no GPS." />
-            </button>
+            </a>
             <button>
               <img src="/assets/icons/arrow_forward.svg" alt="Abrir." />
             </button>
