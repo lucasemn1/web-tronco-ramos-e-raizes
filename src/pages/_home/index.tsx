@@ -25,11 +25,10 @@ export default function Home(): JSX.Element {
 
     let x = scrollExhibitions - Math.round(window.innerWidth / 2);
 
-    console.log(window.innerWidth - listWidth, x);
-
     if (window.innerWidth - listWidth > x) {
       x = window.innerWidth - listWidth;
     }
+
     setScrollExhibitions(x);
   }
 
@@ -92,7 +91,22 @@ export default function Home(): JSX.Element {
             <h2>Mapa de exposições</h2>
           </div>
 
-          <Map />
+          <Map
+            markers={[
+              {
+                title: "Hello World",
+                accessUrl: "#",
+                lat: -6.6917981,
+                long: -36.6470937,
+              },
+              {
+                title: "Hello World 2",
+                accessUrl: "#",
+                lat: -5.797058,
+                long: -36.4469677,
+              },
+            ]}
+          />
         </section>
 
         <section className={`content ${styles.galleryArea}`}>

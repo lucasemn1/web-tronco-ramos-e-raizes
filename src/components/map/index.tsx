@@ -1,28 +1,59 @@
 // Leaflet
-import { LatLngExpression } from "leaflet";
 import { MapContainer, Marker, Popup, TileLayer } from "react-leaflet";
 import { icon } from "leaflet";
 
+// Styles
 import styles from "./style.module.scss";
 
-export default function Map() {
-  const position: LatLngExpression = [51.505, -0.09];
+// Interfaces
+import MapMarker from "../../interfaces/MapMarker";
+
+interface Props {
+  markers: MapMarker[];
+}
+
+export default function Map(props: Props) {
   const customIcon = icon({
-    iconUrl: "/assets/img/logo.png",
-    iconSize: [32, 32],
+    iconUrl: "/assets/icons/location_on.svg",
+    iconSize: [54, 54],
   });
 
-  return (
-    <MapContainer center={position} zoom={17} scrollWheelZoom={false} className={styles.map}>
-      <TileLayer
-        attribution='&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
-        url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
-      />
-      <Marker position={position} icon={customIcon}>
-        <Popup>
-          A pretty CSS3 popup. <br /> Easily customizable.
+  function renderMarkers() {
+    return props.markers.map((marker) => (
+      <Marker
+        key={`${marker.lat}-${marker.long}`}
+        position={[marker.lat, marker.long]}
+        icon={customIcon}
+      >
+        <Popup className={styles.popup} closeButton={false}>
+          <h1>{marker.title}</h1>
+
+          <div className={styles.buttonsArea}>
+            <button>
+              <img src="/assets/icons/map.svg" alt="Abrir no GPS." />
+            </button>
+            <button>
+              <img src="/assets/icons/arrow_forward.svg" alt="Abrir." />
+            </button>
+          </div>
         </Popup>
       </Marker>
+    ));
+  }
+
+  return (
+    <MapContainer
+      center={[-5.8255766, -36.5751698]}
+      zoom={8}
+      scrollWheelZoom={false}
+      className={styles.map}
+    >
+      <TileLayer
+        attribution='&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
+        url="https://tiles.stadiamaps.com/tiles/alidade_smooth/{z}/{x}/{y}{r}.png"
+      />
+
+      {renderMarkers()}
     </MapContainer>
   );
 }

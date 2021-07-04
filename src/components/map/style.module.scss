@@ -2,3 +2,45 @@
   height: 40rem;
   width: 100%;
 }
+
+.popup {
+  width: 13.75rem;
+
+  h1 {
+    color: var(--border-color);
+    border: none;
+    text-shadow: none;
+    text-align: center;
+    margin-bottom: 1.1875rem;
+  }
+
+  .buttonsArea {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.6875rem;
+
+    & > button {
+      border: 1px solid var(--border-color);
+      background-color: transparent;
+      color: var(--border-color);
+      width: 3.875rem;
+      height: 2.125rem;
+      font-size: 0;
+
+      &:last-child {
+        background-color: var(--border-color);
+        color: #ffffff;
+      }
+
+      &:hover {
+        filter: brightness(0.85);
+      }
+
+      &:active {
+        filter: brightness(0.8);
+      }
+    }
+  }
+}

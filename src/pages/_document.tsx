@@ -27,7 +27,7 @@ class MyDocument extends Document {
             rel="icon"
             type="image/png"
             sizes="192x192"
-            href="/favicon/android-icon-192x192.pn /g"
+            href="/favicon/android-icon-192x192.png"
           />
           <link rel="manifest" href="/manifest.json" />
           <meta name="msapplication-TileImage" content="/favicon/ms-icon-144x144.png" />
