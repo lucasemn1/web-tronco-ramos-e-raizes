@@ -11,17 +11,18 @@ import styles from "./style.module.scss";
 // Utils
 import { getStringDateInBrasilizamFormat } from "../../utils/date";
 
-interface IExhibition {
-  title: string;
-  content: string;
-  createdAt: number;
-}
+// Interfaces
+import IExhibition from "../../interfaces/entities/Exhibition";
+import Category from "../../interfaces/entities/Category";
+import Author from "../../interfaces/entities/Author";
 
-interface IProps {
+interface Props {
   exhibition: IExhibition;
+  categories: Category[];
+  authors: Author[];
 }
 
-export default function Exhibition({ exhibition }: IProps) {
+export default function Exhibition({ exhibition, authors }: Props) {
   const createdAt = new Date(exhibition.createdAt);
 
   useEffect(() => {
@@ -32,6 +33,15 @@ export default function Exhibition({ exhibition }: IProps) {
       banner.style.backgroundPositionY = `${window.scrollY * 0.02 + 38.5625}rem`;
     };
   });
+
+  function renderAuthors() {
+    return authors.map((author) => (
+      <div key={`author-${author.id}`} className={styles.author}>
+        <img src={author.pictureUrl} alt={`Foto de perfil de ${author.name}`} />
+        <span>{author.name}</span>
+      </div>
+    ));
+  }
 
   return (
     <>
@@ -51,12 +61,10 @@ export default function Exhibition({ exhibition }: IProps) {
         <h1>{exhibition.title}</h1>
         <time>{getStringDateInBrasilizamFormat(createdAt)}</time>
         <hr />
-
         <div
           className={styles.textContent}
           dangerouslySetInnerHTML={{ __html: exhibition.content }}
         />
-
         <div className={`${styles.mediaGrid}`}>
           <div>
             <img src="/assets/icons/play_circle_filled.svg" alt="Matéria em áudio" />
@@ -75,43 +83,82 @@ export default function Exhibition({ exhibition }: IProps) {
             <h3>10 Imagens</h3>
           </div>
         </div>
+        <section className={styles.categoriesArea}>
+          <h2>Categorias</h2>
+
+          <div className={styles.categories}>
+            <span>#Exemplo 1</span>
+            <span>#Exemplo 2</span>
+            <span>#Exemplo 3</span>
+            <span>#Exemplo 4</span>
+          </div>
+        </section>
+      </section>
+
+      <section className={styles.authorsArea}>
+        <h2>{authors.length === 1 ? "Autor" : "Autores"}</h2>
+
+        <div className={styles.authors}>{renderAuthors()}</div>
       </section>
     </>
   );
 }
 
-export const getStaticProps: GetStaticProps<IProps> = async () => {
+export const getStaticProps: GetStaticProps<Props> = async () => {
+  const exhibition: IExhibition = {
+    title: "Lorem Impsu",
+    createdAt: Date.now(),
+    authors: [],
+    categories: [],
+    content: `
+      <p>
+          Lorem, ipsum dolor sit amet consectetur adipisicing elit. Suscipit, at laboriosam.
+          Facilis quae blanditiis dolor quidem et nisi sequi, exercitationem ipsam unde id enim
+          possimus explicabo facere quia maiores totam? <br />
+          Lorem, ipsum dolor sit amet consectetur adipisicing elit. Suscipit, at laboriosam.
+          Facilis quae blanditiis dolor quidem et nisi sequi, exercitationem ipsam unde id enim
+          possimus explicabo facere quia maiores totam? <br />
+          Lorem, ipsum dolor sit amet consectetur adipisicing elit. Suscipit, at laboriosam.
+          Facilis quae blanditiis dolor quidem et nisi sequi, exercitationem ipsam unde id enim
+          possimus explicabo facere quia maiores totam?
+        </p>
+
+        <p>
+          Lorem, ipsum dolor sit amet consectetur adipisicing elit. Suscipit, at laboriosam.
+          Facilis quae blanditiis dolor quidem et nisi sequi, exercitationem ipsam unde id enim
+          possimus explicabo facere quia maiores totam? <br />
+          Lorem, ipsum dolor sit amet consectetur adipisicing elit. Suscipit, at laboriosam.
+          Facilis quae blanditiis dolor quidem et nisi sequi, exercitationem ipsam unde id enim
+          possimus explicabo facere quia maiores totam? <br />
+          Lorem, ipsum dolor sit amet consectetur adipisicing elit. Suscipit, at laboriosam.
+          Facilis quae blanditiis dolor quidem et nisi sequi, exercitationem ipsam unde id enim
+          possimus explicabo facere quia maiores totam?
+        </p>
+      `,
+  };
+
+  const authors: Author[] = [
+    {
+      id: 1,
+      name: "Ben Affleck",
+      pictureUrl:
+        "https://p2.trrsf.com/image/fget/cf/460/0/images.terra.com/2021/05/04/1343439445-ben-affleck.jpg",
+    },
+    {
+      id: 2,
+      name: "Gal Gadot",
+      pictureUrl:
+        "https://img.olhardigital.com.br/wp-content/uploads/2021/04/shutterstock_1060297688-scaled.jpg",
+    },
+  ];
+
+  const categories: Category[] = [];
+
   return {
     props: {
-      exhibition: {
-        title: "Lorem Impsu",
-        createdAt: Date.now(),
-        content: `
-          <p>
-              Lorem, ipsum dolor sit amet consectetur adipisicing elit. Suscipit, at laboriosam.
-              Facilis quae blanditiis dolor quidem et nisi sequi, exercitationem ipsam unde id enim
-              possimus explicabo facere quia maiores totam? <br />
-              Lorem, ipsum dolor sit amet consectetur adipisicing elit. Suscipit, at laboriosam.
-              Facilis quae blanditiis dolor quidem et nisi sequi, exercitationem ipsam unde id enim
-              possimus explicabo facere quia maiores totam? <br />
-              Lorem, ipsum dolor sit amet consectetur adipisicing elit. Suscipit, at laboriosam.
-              Facilis quae blanditiis dolor quidem et nisi sequi, exercitationem ipsam unde id enim
-              possimus explicabo facere quia maiores totam?
-            </p>
-
-            <p>
-              Lorem, ipsum dolor sit amet consectetur adipisicing elit. Suscipit, at laboriosam.
-              Facilis quae blanditiis dolor quidem et nisi sequi, exercitationem ipsam unde id enim
-              possimus explicabo facere quia maiores totam? <br />
-              Lorem, ipsum dolor sit amet consectetur adipisicing elit. Suscipit, at laboriosam.
-              Facilis quae blanditiis dolor quidem et nisi sequi, exercitationem ipsam unde id enim
-              possimus explicabo facere quia maiores totam? <br />
-              Lorem, ipsum dolor sit amet consectetur adipisicing elit. Suscipit, at laboriosam.
-              Facilis quae blanditiis dolor quidem et nisi sequi, exercitationem ipsam unde id enim
-              possimus explicabo facere quia maiores totam?
-            </p>
-          `,
-      },
+      exhibition,
+      authors,
+      categories,
     },
   };
 };
