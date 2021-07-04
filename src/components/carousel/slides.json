@@ -1,33 +1,49 @@
 [
   {
-    "title": "Cultura Indígena",
-    "content": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.",
+    "title": "Quilombolas",
+    "content": "O Rio Grande do Norte possui mais de sessenta comunidades quilombolas mapeadas. Destas, cerca de trinta e três são reconhecidas pela Fundação Cultural Palmares e apenas uma (Jatoba, municipio de Patu) teve o seu título coletivo reconhecido. Os territórios quilombolas são distribuídos em todas as regiões do estado, geralmente localizados nas terras devolutas ou em terras que não tinham, até pouco tempo, um alto valor comercial. As comunidades negras, com suas trajetórias históricas próprias, são percebidas pelos seus moradores como lugares de ancestralidade e de tradição.",
     "image": {
-      "src": "/assets/img/header_image.png",
+      "src": "/assets/img/carousel/1.jpg",
       "alt": "Imagem"
     }
   },
   {
-    "title": "Cultura Quilombola",
-    "content": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.",
+    "title": "Indígenas",
+    "content": "Os Povos Indígenas do Rio Grande do Norte iniciaram afirmação de sua identidade étnica a partir dos anos 2000. No ano de 2005, foi realizada a primeira audiência pública em âmbito estadual. Na ocasião três comunidades se apresentaram publicamente como indígenas: Catu dos Eleotérios; Mendonça do Amarelão; Caboclos do Assu. Passados mais de 15 anos desse marco, são reconhecidos e acompanhados pelo órgão oficial (Funai) seis povos indígenas do Rio Grande do Norte: Caboclos do Assu; Potiguara do Catu; Potiguara do Sagi/Trabanda; Potiguara Mendonça; Tapuia Paiacu; Tapuia. As lideranças desses grupos seguem mobilizadas em luta pela garantia dos direitos constitucionais. ",
     "image": {
-      "src": "/assets/img/header_image_2.jpeg",
+      "src": "/assets/img/carousel/2.jpg",
       "alt": "Imagem"
     }
   },
   {
-    "title": "Cultura Indígena",
-    "content": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.",
+    "title": "Monumentos",
+    "content": "Os monumentos encontrados no Rio Grande do Norte conservam as marcas da presença e da atuação de grupos e sujeitos que tiveram suas histórias e memórias apagadas ou encobertas. Assim, igrejas, casas de câmara e cadeia, fazendas e antigos currais, engenhos, casas das irmandades negras, taperas, cemitérios e sepulturas, etc. atestam das formas de vida, do trabalho, da religiosidade e das resistências de personagens marginalizados: negros, mestiços, índios e ciganos. Mesmo escravizados e explorados, souberam aproveitar as possibilidades abertas pelas circunstâncias históricas, criando meios de sobrevivência para suas famílias. Mantiveram, mesmo que no âmbito restrito, suas memórias negadas pelos discursos elitistas; essas aparecem, nem sempre muito visíveis, nos monumentos históricos que construiram.",
     "image": {
-      "src": "/assets/img/header_image.png",
+      "src": "/assets/img/carousel/3.jpg",
       "alt": "Imagem"
     }
   },
   {
-    "title": "Cultura Quilombola",
-    "content": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.",
+    "title": "Sitios Aquerológicos",
+    "content": "Os sítios arqueológicos do Rio Grande do Norte evidenciam a presença indígena e negra, na longa duração. Junto com a documentação histórica e as narrativas orais são marcas de uma história que não foi escrita. Os sítios arqueológicos estão espalhados por todas as regiões do estado, sendo, entre outros, lugares com arte rupestre, vestígios de acampamentos e de moradias e locais de deposição dos mortos. Não necessariamente, os sítios arqueológicos precisam ser de grande magnitude para serem considerados como tais.",
     "image": {
-      "src": "/assets/img/header_image_2.jpeg",
+      "src": "/assets/img/carousel/4.jpg",
+      "alt": "Imagem"
+    }
+  },
+  {
+    "title": "Lugares",
+    "content": "Os lugares de memória são marcas de um passado inscrito na paisagem, materializam o esquecimento e o apagamento da história dos que perderam as guerras. As serras, rios, vales e grutas carregam a lembrança de eventos que foram apagados mas que resistem, às vezes, apenas na lembrança dos moradores do lugar, numa marca na paisagem ou através dos topônimos. Essa história, mesmo sem ser inteligível, resiste na memória e testemunha de acontecimentos violentos, espoliações de terra, aprisionamentos, assassinatos. A natureza conserva na sua concretude a memória trágica dos fatos.",
+    "image": {
+      "src": "/assets/img/carousel/5.jpg",
+      "alt": "Imagem"
+    }
+  },
+  {
+    "title": "Patrimônio imaterial",
+    "content": "O Rio Grande do Norte é conhecido pelo seu folclore, com as obras de Luis da Câmara Cascudo e de Mário de Andrade. Hoje, prefere-se designar como patrimônio imaterial as práticas sociais coletivas, como as festas e as celebrações, as formas de expressão cênicas, plásticas, musicais ou lúdicas e os saberes transmitidos de geração em geração (os ofício,s as técnicas e modos de fazer). Os povos tradicionais e seus mestres, poetas e contadores de história, artesões, rabequeiros, rezadeiras e curandeiros, cozinheiras são os detentores desse patrimônio pouco valorizado. As festas, como as da irmandade do Rosário no Seridó, as brincadeiras e as danças, têm um atrativo especial por nos mostrar que esses saberes da tradição são muito vivos.",
+    "image": {
+      "src": "/assets/img/carousel/6.jpeg",
       "alt": "Imagem"
     }
   }
