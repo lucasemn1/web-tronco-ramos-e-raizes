@@ -3,15 +3,30 @@
   height: 31.5625rem;
   position: relative;
 
-  & > .information,
-  & > .dateAndView {
+  & .cardMainContent {
+    width: 100%;
+    height: 100%;
+    z-index: 2;
+    background-repeat: no-repeat;
+    background-size: auto 130%;
+  }
+
+  & .cardMainContent:hover {
+    background-size: auto 120%;
+    transition: 0.5s;
+  }
+
+  & .information,
+  & .dateAndView,
+  & .cardMainContent {
     position: absolute;
     width: 23.3125rem;
     height: 29.18rem;
     border-radius: 1rem;
   }
 
-  & > .information {
+  & .information {
+    z-index: 1;
     top: 0;
     left: 0;
     display: flex;
@@ -39,7 +54,7 @@
     }
   }
 
-  & > .dateAndView {
+  & .dateAndView {
     display: flex;
     align-items: flex-end;
     justify-content: space-between;

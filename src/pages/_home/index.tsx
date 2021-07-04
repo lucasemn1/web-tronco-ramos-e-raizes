@@ -13,8 +13,36 @@ import Carousel from "../../components/carousel";
 import ExhibitionCard from "../../components/exhibition-card";
 import styles from "./style.module.scss";
 import ImageWrapper from "../../components/image-wrapper";
+import { useState } from "react";
 
 export default function Home(): JSX.Element {
+  const [scrollExhibitions, setScrollExhibitions] = useState<number>(0);
+
+  function handleArrowLeft() {
+    const numberOfExhibitionsCards = 8 + 1.2;
+    const widthOfOneCard = 23.9375 * 16;
+    const listWidth = numberOfExhibitionsCards * widthOfOneCard;
+
+    let x = scrollExhibitions - Math.round(window.innerWidth / 2);
+
+    console.log(window.innerWidth - listWidth, x);
+
+    if (window.innerWidth - listWidth > x) {
+      x = window.innerWidth - listWidth;
+    }
+    setScrollExhibitions(x);
+  }
+
+  function handleArrowRight() {
+    let x = scrollExhibitions + Math.round(window.innerWidth / 2);
+
+    if (x > 0) {
+      x = 0;
+    }
+
+    setScrollExhibitions(x);
+  }
+
   return (
     <div>
       <Head>
@@ -27,12 +55,31 @@ export default function Home(): JSX.Element {
           <div className="content">
             <h2>EXPOSIÇÕES MAIS RECENTES</h2>
           </div>
-          <div className={styles.exhibitionArea}>
-            <ExhibitionCard pathToExhibition="/exhibition" />
-            <ExhibitionCard pathToExhibition="/exhibition" />
-            <ExhibitionCard pathToExhibition="/exhibition" />
-            <ExhibitionCard pathToExhibition="/exhibition" />
-            <ExhibitionCard pathToExhibition="/exhibition" />
+          <div className={styles.exhibitionContainer} style={{ marginLeft: scrollExhibitions }}>
+            <img
+              src="/assets/icons/arrow_left.svg"
+              alt="Passar exibições para esquerda"
+              className={`${styles.arrowLeft} ${styles.arrowIcon}`}
+              onClick={handleArrowRight}
+              onKeyDown={handleArrowRight}
+            />
+            <div className={styles.exhibitionArea}>
+              <ExhibitionCard pathToExhibition="/exhibition" />
+              <ExhibitionCard pathToExhibition="/exhibition" />
+              <ExhibitionCard pathToExhibition="/exhibition" />
+              <ExhibitionCard pathToExhibition="/exhibition" />
+              <ExhibitionCard pathToExhibition="/exhibition" />
+              <ExhibitionCard pathToExhibition="/exhibition" />
+              <ExhibitionCard pathToExhibition="/exhibition" />
+              <ExhibitionCard pathToExhibition="/exhibition" />
+            </div>
+            <img
+              src="/assets/icons/arrow_left.svg"
+              alt="Passar exibições para direita"
+              className={`${styles.arrowRight} ${styles.arrowIcon}`}
+              onClick={handleArrowLeft}
+              onKeyDown={handleArrowLeft}
+            />
           </div>
         </section>
 
@@ -48,10 +95,10 @@ export default function Home(): JSX.Element {
           <Map />
         </section>
 
-        <section className={`content ${styles.galeryArea}`}>
+        <section className={`content ${styles.galleryArea}`}>
           <h2>Galeria</h2>
 
-          <div className={styles.galeryGrid}>
+          <div className={styles.galleryGrid}>
             <ImageWrapper
               className={styles.firstImageWrapper}
               alt="Teste"
