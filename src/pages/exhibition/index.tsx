@@ -15,6 +15,7 @@ import { getStringDateInBrasilizamFormat } from "../../utils/date";
 import IExhibition from "../../interfaces/entities/Exhibition";
 import Category from "../../interfaces/entities/Category";
 import Author from "../../interfaces/entities/Author";
+import ExhibitionService from "../../services/rest/ExhibitionService";
 
 interface Props {
   exhibition: IExhibition;
@@ -105,37 +106,7 @@ export default function Exhibition({ exhibition, authors }: Props) {
 }
 
 export const getStaticProps: GetStaticProps<Props> = async () => {
-  const exhibition: IExhibition = {
-    title: "Lorem Impsu",
-    createdAt: Date.now(),
-    authors: [],
-    categories: [],
-    content: `
-      <p>
-          Lorem, ipsum dolor sit amet consectetur adipisicing elit. Suscipit, at laboriosam.
-          Facilis quae blanditiis dolor quidem et nisi sequi, exercitationem ipsam unde id enim
-          possimus explicabo facere quia maiores totam? <br />
-          Lorem, ipsum dolor sit amet consectetur adipisicing elit. Suscipit, at laboriosam.
-          Facilis quae blanditiis dolor quidem et nisi sequi, exercitationem ipsam unde id enim
-          possimus explicabo facere quia maiores totam? <br />
-          Lorem, ipsum dolor sit amet consectetur adipisicing elit. Suscipit, at laboriosam.
-          Facilis quae blanditiis dolor quidem et nisi sequi, exercitationem ipsam unde id enim
-          possimus explicabo facere quia maiores totam?
-        </p>
-
-        <p>
-          Lorem, ipsum dolor sit amet consectetur adipisicing elit. Suscipit, at laboriosam.
-          Facilis quae blanditiis dolor quidem et nisi sequi, exercitationem ipsam unde id enim
-          possimus explicabo facere quia maiores totam? <br />
-          Lorem, ipsum dolor sit amet consectetur adipisicing elit. Suscipit, at laboriosam.
-          Facilis quae blanditiis dolor quidem et nisi sequi, exercitationem ipsam unde id enim
-          possimus explicabo facere quia maiores totam? <br />
-          Lorem, ipsum dolor sit amet consectetur adipisicing elit. Suscipit, at laboriosam.
-          Facilis quae blanditiis dolor quidem et nisi sequi, exercitationem ipsam unde id enim
-          possimus explicabo facere quia maiores totam?
-        </p>
-      `,
-  };
+  const { data } = await new ExhibitionService().getOne(1);
 
   const authors: Author[] = [
     {
@@ -156,7 +127,7 @@ export const getStaticProps: GetStaticProps<Props> = async () => {
 
   return {
     props: {
-      exhibition,
+      exhibition: data,
       authors,
       categories,
     },
