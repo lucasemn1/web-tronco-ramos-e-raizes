@@ -23,23 +23,23 @@ export default function Home(): JSX.Element {
     const widthOfOneCard = 23.9375 * 16;
     const listWidth = numberOfExhibitionsCards * widthOfOneCard;
 
-    let x = scrollExhibitions - Math.round(window.innerWidth / 2);
+    let marginToScroll = scrollExhibitions - Math.round(window.innerWidth / 2);
 
-    if (window.innerWidth - listWidth > x) {
-      x = window.innerWidth - listWidth;
+    if (window.innerWidth - listWidth > marginToScroll) {
+      marginToScroll = window.innerWidth - listWidth;
     }
 
-    setScrollExhibitions(x);
+    setScrollExhibitions(marginToScroll);
   }
 
   function handleArrowRight() {
-    let x = scrollExhibitions + Math.round(window.innerWidth / 2);
+    let marginToScroll = scrollExhibitions + Math.round(window.innerWidth / 2);
 
-    if (x > 0) {
-      x = 0;
+    if (marginToScroll > 0) {
+      marginToScroll = 0;
     }
 
-    setScrollExhibitions(x);
+    setScrollExhibitions(marginToScroll);
   }
 
   return (

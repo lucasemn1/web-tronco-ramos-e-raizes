@@ -1,10 +1,28 @@
 import Head from "next/head";
+import { useEffect, useState } from "react";
 
 // Components
 import InputField from "../../components/input-field";
 import Paginator from "../../components/paginator";
 
+// Interfaces:
+import Document from "../../interfaces/entities/Document";
+
+// Services:
+import DocumentService from "../../services/rest/DocumentService";
+
 export default function Documents() {
+  const [documents, setDocuments] = useState<Document[]>([]);
+  const documentService = new DocumentService("documents");
+
+  useEffect(() => {
+    async function loadDocuments() {
+      console.log(await (await documentService.getAll()).data.results);
+    }
+
+    loadDocuments();
+  }, []);
+
   return (
     <div>
       <Head>
