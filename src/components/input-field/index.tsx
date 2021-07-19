@@ -1,8 +1,8 @@
-import React, { InputHTMLAttributes } from "react";
+import React, { ChangeEvent, InputHTMLAttributes } from "react";
 
 import styles from "./style.module.scss";
 
-interface InputFieldProps {
+interface InputFieldProps extends HTMLInputElement {
   pathToIcon: string;
 }
 
@@ -15,7 +15,16 @@ export default function InputField(props: InputHTMLAttributes<InputFieldProps>) 
         </label>
       )}
 
-      {props.type === "text" && <input type="text" className={styles.input} />}
+      {props.type === "text" && (
+        <input
+          type="text"
+          className={styles.input}
+          value={props.value}
+          onChange={(e: ChangeEvent<InputFieldProps>) => {
+            props.onChange(e);
+          }}
+        />
+      )}
     </div>
   );
 }
