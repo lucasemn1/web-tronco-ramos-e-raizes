@@ -1,9 +1,23 @@
+// Next
 import Head from "next/head";
+import { GetStaticProps } from "next";
 
+// Components
 import InputField from "../../components/input-field";
 import Paginator from "../../components/paginator";
 
+// Services
+import ExhibitionService from "../../services/rest/ExhibitionService";
+
+// Interfaces
+import Exhibition from "../../interfaces/entities/Exhibition";
+
+// Styles
 import styles from "./styles.module.scss";
+
+interface Props {
+  exhibitions: Exhibition[];
+}
 
 export default function Exhibition() {
   return (
@@ -162,3 +176,14 @@ export default function Exhibition() {
     </div>
   );
 }
+
+export const getStaticProps: GetStaticProps<Props> = async () => {
+  const { data } = await new ExhibitionService().getAll(1);
+
+  return {
+    props: {
+      exhibitions: data.results,
+    },
+    revalidate: 24 * 60 * 60,
+  };
+};

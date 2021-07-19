@@ -8,7 +8,7 @@ class BaseService<T> {
 
   constructor(endpoint: string) {
     this.connection = axios.create({
-      baseURL: "http://localhost:8000/api/v1",
+      baseURL: "http://192.168.18.8:8000/api/v1",
     });
 
     this.endpoint = endpoint;
@@ -24,7 +24,7 @@ class BaseService<T> {
         status: true,
       };
     } catch (err) {
-      return {
+      throw {
         response: err.response,
         data: err.response.data,
         status: false,
@@ -32,9 +32,11 @@ class BaseService<T> {
     }
   }
 
-  public async getAll(): Promise<ServiceResponse<PaginatedResponse<T>>> {
+  public async getAll(page: number): Promise<ServiceResponse<PaginatedResponse<T>>> {
     try {
-      const response = await this.connection.get<PaginatedResponse<T>>(`/${this.endpoint}/`);
+      const response = await this.connection.get<PaginatedResponse<T>>(
+        `/${this.endpoint}/?page=${page}`
+      );
 
       return {
         response,
@@ -42,7 +44,7 @@ class BaseService<T> {
         status: true,
       };
     } catch (err) {
-      return {
+      throw {
         response: err.response,
         data: err.response.data,
         status: false,

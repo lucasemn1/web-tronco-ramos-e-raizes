@@ -1,21 +1,25 @@
+// React
+import { useState } from "react";
+
 // Next
 import Head from "next/head";
 import dynamic from "next/dynamic";
-import { GetStaticProps } from "next";
-
-const Map = dynamic(
-  () => import("../../components/map"), // replace '@components/map' with your component's location
-  { ssr: false }
-);
 
 // Components
 import Carousel from "../../components/carousel";
 import ExhibitionCard from "../../components/exhibition-card";
 import styles from "./style.module.scss";
 import ImageWrapper from "../../components/image-wrapper";
-import { useState } from "react";
+const Map = dynamic(() => import("../../components/map"), { ssr: false });
 
-export default function Home(): JSX.Element {
+// Interfaces
+import Exhibition from "../../interfaces/entities/Exhibition";
+
+export interface HomeProps {
+  exhibitions: Exhibition[];
+}
+
+export default function Home(props: HomeProps) {
   const [scrollExhibitions, setScrollExhibitions] = useState<number>(0);
 
   function handleArrowLeft() {
@@ -42,6 +46,12 @@ export default function Home(): JSX.Element {
     setScrollExhibitions(marginToScroll);
   }
 
+  function renderExhibitions() {
+    return props.exhibitions.map((exhibition) => {
+      return <ExhibitionCard key={exhibition.id} pathToExhibition="/exhibition" />;
+    });
+  }
+
   return (
     <div>
       <Head>
@@ -62,16 +72,7 @@ export default function Home(): JSX.Element {
               onClick={handleArrowRight}
               onKeyDown={handleArrowRight}
             />
-            <div className={styles.exhibitionArea}>
-              <ExhibitionCard pathToExhibition="/exhibition" />
-              <ExhibitionCard pathToExhibition="/exhibition" />
-              <ExhibitionCard pathToExhibition="/exhibition" />
-              <ExhibitionCard pathToExhibition="/exhibition" />
-              <ExhibitionCard pathToExhibition="/exhibition" />
-              <ExhibitionCard pathToExhibition="/exhibition" />
-              <ExhibitionCard pathToExhibition="/exhibition" />
-              <ExhibitionCard pathToExhibition="/exhibition" />
-            </div>
+            <div className={styles.exhibitionArea}>{renderExhibitions()}</div>
             <img
               src="/assets/icons/arrow_left.svg"
               alt="Passar exibições para direita"
@@ -155,9 +156,3 @@ export default function Home(): JSX.Element {
     </div>
   );
 }
-
-export const getStaticProps: GetStaticProps = async () => {
-  return {
-    props: {},
-  };
-};
