@@ -1,11 +1,21 @@
+// React
 import { HTMLAttributes, Attributes } from "react";
 
+// Next
 import Link from "next/link";
 
+// Styles
 import styles from "./style.module.scss";
+
+// Interfaces
+import Exhibition from "../../interfaces/entities/Exhibition";
+
+// Utils
+import { getStringDateInBrasilizamFormat } from "../../utils/date";
 
 interface IExhibitionCardProps extends HTMLAttributes<Attributes> {
   pathToExhibition: string;
+  exhibition: Exhibition;
 }
 
 export default function ExhibitionCard(props: IExhibitionCardProps) {
@@ -18,8 +28,7 @@ export default function ExhibitionCard(props: IExhibitionCardProps) {
           <div
             className={styles.cardMainContent}
             style={{
-              backgroundImage:
-                'url("https://i.pinimg.com/originals/ca/4b/91/ca4b9102f39d3b1cfa1756f93ad175c7.jpg")',
+              backgroundImage: `url("${props.exhibition.thumbnail}")`,
             }}
           >
             <div
@@ -28,15 +37,12 @@ export default function ExhibitionCard(props: IExhibitionCardProps) {
                 background: `linear-gradient(180deg, rgba(0, 0, 0, 0) 42.71%, #121212 100%)`,
               }}
             >
-              <h1 className={styles.title}>Lorem Ipsum</h1>
-              <p className={styles.description}>
-                Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quam aliquid vel quibusdam
-                eius assumenda?
-              </p>
+              <h1 className={styles.title}>{props.exhibition.title}</h1>
+              <p className={styles.description}>{props.exhibition.legend}</p>
             </div>
           </div>
           <div className={styles.dateAndView}>
-            <b>04 de mai. de 2021</b>
+            <b>{getStringDateInBrasilizamFormat(new Date(props.exhibition.createdAt))}</b>
             <p>
               <img src="/assets/icons/views.svg" alt="Quantidade de visualizações" />
               180
