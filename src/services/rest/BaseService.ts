@@ -26,7 +26,7 @@ class BaseService<T> {
     } catch (err) {
       throw {
         response: err.response,
-        data: err.response.data,
+        data: err.response?.data,
         status: false,
       };
     }
