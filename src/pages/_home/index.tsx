@@ -14,9 +14,11 @@ const Map = dynamic(() => import("../../components/map"), { ssr: false });
 
 // Interfaces
 import Exhibition from "../../interfaces/entities/Exhibition";
+import ImageAlbum from "../../interfaces/entities/ImageAlbum";
 
 export interface HomeProps {
   exhibitions: Exhibition[];
+  homeImageAlbum: ImageAlbum;
 }
 
 export default function Home(props: HomeProps) {
@@ -48,7 +50,40 @@ export default function Home(props: HomeProps) {
 
   function renderExhibitions() {
     return props.exhibitions.map((exhibition) => {
-      return <ExhibitionCard key={exhibition.id} pathToExhibition="/exhibition" />;
+      return (
+        <ExhibitionCard
+          key={exhibition.id}
+          pathToExhibition={`/exhibition/${exhibition.id}`}
+          exhibition={exhibition}
+        />
+      );
+    });
+  }
+
+  function renderGalery() {
+    return props.homeImageAlbum.images.map((image, index) => {
+      switch (index) {
+        case 0:
+          return (
+            <ImageWrapper
+              className={styles.firstImageWrapper}
+              alt={image.title}
+              imageUrl={image.image}
+            />
+          );
+
+        case 3:
+          return (
+            <ImageWrapper
+              className={styles.fourthImageWrapper}
+              alt={image.title}
+              imageUrl={image.image}
+            />
+          );
+
+        default:
+          return <ImageWrapper alt={image.title} imageUrl={image.image} />;
+      }
     });
   }
 
@@ -113,44 +148,7 @@ export default function Home(props: HomeProps) {
         <section className={`content ${styles.galleryArea}`}>
           <h2>Galeria</h2>
 
-          <div className={styles.galleryGrid}>
-            <ImageWrapper
-              className={styles.firstImageWrapper}
-              alt="Teste"
-              imageUrl="https://www.cultura.sp.gov.br/wp-content/uploads/2018/04/Capturar.png"
-            />
-
-            <ImageWrapper
-              alt="Teste"
-              imageUrl="https://www.cultura.sp.gov.br/wp-content/uploads/2018/04/Capturar.png"
-            />
-
-            <ImageWrapper
-              alt="Teste"
-              imageUrl="https://www.cultura.sp.gov.br/wp-content/uploads/2018/04/Capturar.png"
-            />
-
-            <ImageWrapper
-              className={styles.fourthImageWrapper}
-              alt="Teste"
-              imageUrl="https://www.cultura.sp.gov.br/wp-content/uploads/2018/04/Capturar.png"
-            />
-
-            <ImageWrapper
-              alt="Teste"
-              imageUrl="https://www.cultura.sp.gov.br/wp-content/uploads/2018/04/Capturar.png"
-            />
-
-            <ImageWrapper
-              alt="Teste"
-              imageUrl="https://www.cultura.sp.gov.br/wp-content/uploads/2018/04/Capturar.png"
-            />
-
-            <ImageWrapper
-              alt="Teste"
-              imageUrl="https://www.cultura.sp.gov.br/wp-content/uploads/2018/04/Capturar.png"
-            />
-          </div>
+          <div className={styles.galleryGrid}>{renderGalery()}</div>
         </section>
       </main>
     </div>

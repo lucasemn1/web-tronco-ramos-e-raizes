@@ -9,17 +9,20 @@ import "leaflet/dist/leaflet.css";
 
 // Services
 import ExhibitionService from "../services/rest/ExhibitionService";
+import ImageAlbumService from "../services/rest/ImageAlbumService";
 
 export default function HomePage(props: HomeProps) {
-  return <Home exhibitions={props.exhibitions} />;
+  return <Home exhibitions={props.exhibitions} homeImageAlbum={props.homeImageAlbum} />;
 }
 
 export const getStaticProps: GetStaticProps<HomeProps> = async () => {
-  const { data } = await new ExhibitionService().getAll(1);
+  const exhibitionsResponse = await new ExhibitionService().getAll(1);
+  const homeImageAlbum = await new ImageAlbumService().getOne(3);
 
   return {
     props: {
-      exhibitions: data.results,
+      exhibitions: exhibitionsResponse.data.results,
+      homeImageAlbum: homeImageAlbum.data,
     },
     revalidate: 24 * 60 * 60,
   };
