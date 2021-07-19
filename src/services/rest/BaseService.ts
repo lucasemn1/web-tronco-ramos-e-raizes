@@ -8,7 +8,7 @@ class BaseService<T> {
 
   constructor(endpoint: string) {
     this.connection = axios.create({
-      baseURL: "http://192.168.18.8:8000/api/v1",
+      baseURL: `${process.env.BACKEND_URL}/api/v1`,
     });
 
     this.endpoint = endpoint;
