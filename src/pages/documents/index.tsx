@@ -17,7 +17,7 @@ export default function Documents() {
 
   useEffect(() => {
     async function loadDocuments() {
-      console.log(await (await documentService.getAll()).data.results);
+      console.log(await (await documentService.getAll(1)).data.results);
     }
 
     loadDocuments();
@@ -118,7 +118,12 @@ export default function Documents() {
           </table>
         </div>
 
-        <Paginator className="paginator" />
+        <Paginator
+          className="paginator"
+          currentPage={1}
+          limit={3}
+          changePage={() => console.log("")}
+        />
       </section>
     </div>
   );

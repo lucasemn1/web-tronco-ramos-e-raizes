@@ -66,7 +66,12 @@ export default function Documents() {
           </table>
         </div>
 
-        <Paginator className="paginator" />
+        <Paginator
+          className="paginator"
+          currentPage={1}
+          limit={3}
+          changePage={() => console.log("")}
+        />
       </section>
     </div>
   );
