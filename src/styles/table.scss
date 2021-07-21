@@ -14,15 +14,15 @@ thead th {
   }
 }
 
-tbody > tr {
+tbody tr {
   height: 2.625rem;
   cursor: pointer;
 
-  & :first-child {
+  & > :first-child {
     padding-left: 1rem;
   }
 
-  & > td {
+  & td {
     border-top: 1px solid #404040;
   }
 }
