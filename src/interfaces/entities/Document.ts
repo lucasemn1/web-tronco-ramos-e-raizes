@@ -5,8 +5,8 @@ export default interface Document {
   user: number;
   title: string;
   is_public: string;
-  created_at: Date;
-  updated_at: Date;
+  createdAt: string;
+  updatedAt: string;
   file: string;
   tags: Tag[];
 }
