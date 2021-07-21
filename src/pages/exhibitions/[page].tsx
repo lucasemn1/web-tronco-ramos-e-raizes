@@ -18,6 +18,7 @@ import IExhibition from "../../interfaces/entities/Exhibition";
 // Styles
 import styles from "./styles.module.scss";
 import { getStringDateInBrasilizamFormat } from "../../utils/date";
+import { ParsedUrlQuery } from "querystring";
 
 interface Props {
   exhibitions: IExhibition[];
@@ -111,8 +112,12 @@ export const getStaticPaths: GetStaticPaths = async () => {
   };
 };
 
-export const getStaticProps: GetStaticProps<Props> = async () => {
-  const { data } = await new ExhibitionService().getAll(1);
+interface Params extends ParsedUrlQuery {
+  id: string;
+}
+
+export const getStaticProps: GetStaticProps<Props> = async ({ params }: { params: Params }) => {
+  const { data } = await new ExhibitionService().getAll(Number(params.id));
   const pagesAmount = Math.ceil(data.count / 9);
 
   return {

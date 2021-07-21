@@ -17,7 +17,7 @@ export default function HomePage(props: HomeProps) {
 
 export const getStaticProps: GetStaticProps<HomeProps> = async () => {
   const exhibitionsResponse = await new ExhibitionService().getAll(1);
-  const homeImageAlbum = await new ImageAlbumService().getOne(3);
+  const homeImageAlbum = await new ImageAlbumService().getOne(1);
 
   return {
     props: {

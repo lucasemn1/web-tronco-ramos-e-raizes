@@ -32,7 +32,7 @@ export default function Navbar() {
           </li>
           <li>
             <span>
-              <Link href="/exhibitions">Exposições</Link>
+              <Link href="/exhibitions/1">Exposições</Link>
             </span>
           </li>
           <li>
@@ -47,7 +47,7 @@ export default function Navbar() {
             {openDropdown && (
               <ul className={style.dropdown}>
                 <li>
-                  <Link href="/documents">Documentos</Link>
+                  <Link href="/documents/1">Documentos</Link>
                 </li>
                 <li>
                   <Link href="/articles">Artigos</Link>
