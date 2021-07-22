@@ -1,4 +1,4 @@
-import { useState } from "react";
+import React, { useState } from "react";
 import styles from "./style.module.scss";
 
 interface Props {
@@ -15,10 +15,7 @@ export default function HorizontalScrollItems({ children, withOfOneItemInRem, cl
     const numberOfItems = children.length + 1.1;
     const widthOfOneItem = withOfOneItemInRem * 16;
     const listWidth = numberOfItems * widthOfOneItem;
-
     let marginToScroll = scrollItems - Math.round(window.innerWidth / 2);
-
-    console.log(window.innerWidth - listWidth > marginToScroll);
 
     if (window.innerWidth - listWidth > marginToScroll) {
       marginToScroll = window.innerWidth - listWidth;
