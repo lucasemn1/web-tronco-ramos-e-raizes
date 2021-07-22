@@ -38,7 +38,7 @@ export default function Exhibition({ exhibition }: Props) {
 
   function renderCategories() {
     return exhibition.tags.map((tag) => {
-      return <span key={tag.title}>#{tag.title}</span>;
+      return <span key={`exhibition-${tag.id}`}>#{tag.title}</span>;
     });
   }
 
@@ -47,7 +47,7 @@ export default function Exhibition({ exhibition }: Props) {
 
     if (exhibition.albumImage) {
       blocks.push(
-        <button onClick={() => setShowImages(true)}>
+        <button key="image-block" onClick={() => setShowImages(true)}>
           <img src="/assets/icons/image.svg" alt="Imagens" />
           <h3>
             {exhibition.albumImage.images.length}{" "}
@@ -59,7 +59,7 @@ export default function Exhibition({ exhibition }: Props) {
 
     if (exhibition.albumAudio) {
       blocks.push(
-        <button>
+        <button key={`audio-block`}>
           <img src="/assets/icons/play_circle_filled.svg" alt="Matéria em áudio" />
           <h3>Matéria em áudio</h3>
         </button>
@@ -68,7 +68,7 @@ export default function Exhibition({ exhibition }: Props) {
 
     if (exhibition.albumVideo) {
       blocks.push(
-        <button>
+        <button key={`video-block`}>
           <img src="/assets/icons/video_library.svg" alt="Vídeos" />
           <h3>Vídeos</h3>
         </button>
