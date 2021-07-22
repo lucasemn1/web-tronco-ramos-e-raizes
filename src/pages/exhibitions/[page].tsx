@@ -14,11 +14,13 @@ import ExhibitionService from "../../services/rest/ExhibitionService";
 
 // Interfaces
 import IExhibition from "../../interfaces/entities/Exhibition";
+import { ParsedUrlQuery } from "querystring";
 
 // Styles
 import styles from "./styles.module.scss";
+
+// Utils
 import { getStringDateInBrasilizamFormat } from "../../utils/date";
-import { ParsedUrlQuery } from "querystring";
 
 interface Props {
   exhibitions: IExhibition[];
