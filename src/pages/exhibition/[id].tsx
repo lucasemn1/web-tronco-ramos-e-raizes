@@ -24,7 +24,7 @@ interface Props {
 }
 
 export default function Exhibition({ exhibition }: Props) {
-  const [showImages, setShowImages] = useState(true);
+  const [showImages, setShowImages] = useState(false);
   const createdAt = new Date(exhibition.createdAt);
 
   function renderAuthors() {

@@ -5,6 +5,9 @@ import { useEffect } from "react";
 // Next
 import Image from "next/image";
 
+// Components
+import HorizontalScrollItems from "../horizontal-scroll-items";
+
 // Styles
 import styles from "./style.module.scss";
 import IImage from "../../interfaces/entities/Image";
@@ -17,12 +20,28 @@ interface Props {
 }
 
 export default function MediaModal(props: Props) {
-  const [focusedImageIndex] = useState(0);
+  const [focusedImageIndex, setFocusedImageIndex] = useState(0);
   const [focusedImage, setFocusedImage] = useState(props.images[focusedImageIndex]);
 
   useEffect(() => {
     setFocusedImage(props.images[focusedImageIndex]);
   }, [focusedImageIndex, props.images]);
+
+  function renderImages() {
+    return props.images.map((image, index) => {
+      return (
+        <Image
+          className={styles.horizontalImage}
+          key={`image-${image.id}`}
+          src={image.image}
+          alt={image.title}
+          width="179"
+          height="127"
+          onClick={() => setFocusedImageIndex(index)}
+        />
+      );
+    });
+  }
 
   function renderContent() {
     switch (props.type) {
@@ -61,6 +80,13 @@ export default function MediaModal(props: Props) {
       </button>
 
       {renderContent()}
+
+      <HorizontalScrollItems
+        withOfOneItemInRem={11.1875}
+        className={String(styles.horizontalScrollArea)}
+      >
+        {renderImages()}
+      </HorizontalScrollItems>
     </section>
   );
 }

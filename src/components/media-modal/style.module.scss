@@ -26,10 +26,18 @@
     background-color: transparent;
   }
 
-  .mainImage {
-    margin-top: auto;
+  & > .mainImage {
+    margin: auto 0;
     position: relative;
     height: 600px;
     width: 80%;
+  }
+}
+
+.horizontalScrollArea {
+  margin-bottom: 1.125rem;
+
+  .horizontalImage {
+    cursor: pointer;
   }
 }
