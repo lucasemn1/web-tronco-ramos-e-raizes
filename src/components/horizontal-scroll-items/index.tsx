@@ -1,6 +1,8 @@
 import { useEffect, useState } from "react";
 import styles from "./style.module.scss";
 
+import { generateId } from "../../utils/id";
+
 interface Props {
   children: JSX.Element[];
   className?: string;
@@ -9,12 +11,19 @@ interface Props {
 export default function HorizontalScrollItems({ children, className }: Props) {
   const [scrollItems, setScrollItems] = useState<number>(0);
   const [listWidth, setListWidth] = useState<number>(0);
+  const [generatedId, setGeneratedId] = useState<string>("");
 
   useEffect(() => {
-    const itemsAreaWidth = document.getElementById("pepetin").scrollWidth;
+    setGeneratedId(generateId());
+  }, []);
 
-    setListWidth(itemsAreaWidth);
-  }, [children]);
+  useEffect(() => {
+    if (document.getElementById(generatedId)) {
+      const itemsAreaWidth = document.getElementById(generatedId).scrollWidth;
+
+      setListWidth(itemsAreaWidth);
+    }
+  }, [children, generatedId]);
 
   function handleArrowRight() {
     let spaceToScroll: number;
@@ -51,7 +60,7 @@ export default function HorizontalScrollItems({ children, className }: Props) {
         onClick={handleArrowLeft}
         onKeyDown={handleArrowLeft}
       />
-      <div className={styles.itemsArea} id="pepetin">
+      <div className={styles.itemsArea} id={generatedId}>
         {children}
       </div>
       <img
