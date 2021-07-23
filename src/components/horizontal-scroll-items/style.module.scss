@@ -8,7 +8,7 @@
     z-index: 3;
     background: linear-gradient(-90deg, rgba(10, 10, 10, 0.74) 0%, rgba(10, 10, 10, 0) 100%);
     height: 100%;
-    width: min-content;
+    width: 5rem;
     cursor: pointer;
     opacity: 0.5;
     transition: 0.5s;
@@ -30,6 +30,8 @@
 
 .itemsArea {
   display: flex;
+  align-items: center;
+  justify-content: flex-start;
   gap: 2rem;
   overflow-x: scroll;
   max-width: 100%;

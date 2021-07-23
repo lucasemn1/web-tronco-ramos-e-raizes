@@ -81,10 +81,7 @@ export default function MediaModal(props: Props) {
 
       {renderContent()}
 
-      <HorizontalScrollItems
-        withOfOneItemInRem={11.1875}
-        className={String(styles.horizontalScrollArea)}
-      >
+      <HorizontalScrollItems className={String(styles.horizontalScrollArea)}>
         {renderImages()}
       </HorizontalScrollItems>
     </section>

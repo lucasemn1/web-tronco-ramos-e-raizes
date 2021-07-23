@@ -28,8 +28,14 @@ export default function Documents({ documents, pagesAmount }: Props) {
         <td>
           <Link href={document.file}>PDF</Link>
         </td>
-        <td>2 MB (não tem)</td>
-        <td>{getStringDateInBrasilizamFormat(new Date(document.createdAt))}</td>
+        <td>
+          <Link href={document.file}>2 MB (não tem)</Link>
+        </td>
+        <td>
+          <Link href={document.file}>
+            {getStringDateInBrasilizamFormat(new Date(document.createdAt))}
+          </Link>
+        </td>
       </tr>
     ));
   }

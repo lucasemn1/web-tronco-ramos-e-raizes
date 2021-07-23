@@ -74,9 +74,7 @@ export default function Home(props: HomeProps) {
             <h2>EXPOSIÇÕES MAIS RECENTES</h2>
           </div>
 
-          <HorizontalScrollItems withOfOneItemInRem={23.9375}>
-            {renderExhibitions()}
-          </HorizontalScrollItems>
+          <HorizontalScrollItems>{renderExhibitions()}</HorizontalScrollItems>
         </section>
 
         <section className={`content ${styles.logoArea}`}>

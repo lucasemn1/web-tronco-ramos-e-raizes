@@ -40,9 +40,10 @@ export default function Navbar() {
               onClick={() => setOpenDropdown(!openDropdown)}
               onKeyUp={() => setOpenDropdown(!openDropdown)}
               role="menu"
+              className={style.dropdownButton}
               tabIndex={0}
             >
-              <Link href="#">Mídias</Link>
+              Mídias
             </span>
             {openDropdown && (
               <ul className={style.dropdown}>

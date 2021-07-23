@@ -36,8 +36,10 @@
 
 .horizontalScrollArea {
   margin-bottom: 1.125rem;
+  align-self: flex-start;
+  width: max-content;
 
-  .horizontalImage {
+  & > .horizontalImage {
     cursor: pointer;
   }
 }
