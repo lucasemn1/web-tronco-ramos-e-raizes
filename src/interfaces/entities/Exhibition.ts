@@ -16,4 +16,5 @@ export default interface Exhibition {
   albumAudio: null;
   tags: Tag[];
   users: User[];
+  views: number;
 }

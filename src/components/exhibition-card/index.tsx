@@ -45,7 +45,7 @@ export default function ExhibitionCard(props: IExhibitionCardProps) {
             <b>{getStringDateInBrasilizamFormat(new Date(props.exhibition.createdAt))}</b>
             <p>
               <img src="/assets/icons/views.svg" alt="Quantidade de visualizações" />
-              180
+              {props.exhibition.views}
             </p>
           </div>
         </div>

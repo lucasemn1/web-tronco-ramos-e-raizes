@@ -6,7 +6,6 @@ import Head from "next/head";
 import { GetStaticPaths, GetStaticProps } from "next";
 
 // Components
-import InputField from "../../components/input-field";
 import Paginator from "../../components/paginator";
 
 // Services
@@ -21,6 +20,7 @@ import styles from "./styles.module.scss";
 
 // Utils
 import { getStringDateInBrasilizamFormat } from "../../utils/date";
+import Link from "next/link";
 
 interface Props {
   exhibitions: IExhibition[];
@@ -28,7 +28,7 @@ interface Props {
 }
 
 export default function Exhibition(props: Props) {
-  const [search, setSearch] = useState("");
+  const [search] = useState("");
   const [exhibitions] = useState<IExhibition[]>([]);
   const [page, setPage] = useState(0);
 
@@ -38,28 +38,30 @@ export default function Exhibition(props: Props) {
 
   function mountExhibition(exhibition: IExhibition) {
     return (
-      <div key={exhibition.id} className={styles.exhibitionThumb}>
-        <div
-          style={{
-            background: `linear-gradient(180deg, rgba(0, 0, 0, 0) 42.71%, #121212 100%), url("${exhibition.thumbnail}"), #000000`,
-          }}
-        >
-          <h3 className={styles.title}>{exhibition.title}</h3>
-        </div>
+      <Link key={exhibition.id} href={`/exhibition/${exhibition.id}`}>
+        <div className={styles.exhibitionThumb}>
+          <div
+            style={{
+              background: `linear-gradient(180deg, rgba(0, 0, 0, 0) 42.71%, #121212 100%), url("${exhibition.thumbnail}"), #000000`,
+            }}
+          >
+            <h3 className={styles.title}>{exhibition.title}</h3>
+          </div>
 
-        <div className={styles.description}>
-          <p>{exhibition.legend}</p>
-        </div>
+          <div className={styles.description}>
+            <p>{exhibition.legend}</p>
+          </div>
 
-        <div className={styles.dateAndView}>
-          <p>{getStringDateInBrasilizamFormat(new Date(exhibition.createdAt))}</p>
+          <div className={styles.dateAndView}>
+            <p>{getStringDateInBrasilizamFormat(new Date(exhibition.createdAt))}</p>
 
-          <p>
-            <img src="/assets/icons/views.svg" alt="Quantidade de visualizações" />
-            180
-          </p>
+            <p>
+              <img src="/assets/icons/views.svg" alt="Quantidade de visualizações" />
+              180
+            </p>
+          </div>
         </div>
-      </div>
+      </Link>
     );
   }
 
@@ -79,13 +81,6 @@ export default function Exhibition(props: Props) {
 
       <section className="small-content content-area">
         <h1 className="title">Exposições</h1>
-
-        <InputField
-          placeholder="Buscar"
-          type="text"
-          value={search}
-          onChange={(e) => setSearch(e.target.value)}
-        />
 
         <div className={styles.exhibitionArea}>{renderExhibitions()}</div>
 
@@ -119,7 +114,7 @@ interface Params extends ParsedUrlQuery {
 }
 
 export const getStaticProps: GetStaticProps<Props> = async ({ params }: { params: Params }) => {
-  const { data } = await new ExhibitionService().getAll(Number(params.id));
+  const { data } = await new ExhibitionService().getAll(Number(params.page));
   const pagesAmount = Math.ceil(data.count / 9);
 
   return {

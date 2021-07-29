@@ -75,13 +75,6 @@ export default function Exhibition({ exhibition }: Props) {
       );
     }
 
-    // if (false) {
-    //   <button>
-    //     <img src="/assets/icons/file_copy.svg" alt="Documentos" />
-    //     <h3>Documentos</h3>
-    //   </button>;
-    // }
-
     return blocks;
   }
 
